@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update turnedOn</title>
+    <script>
+        async function updateTurnedOn(value) {
+            const url = "https://pythonarduinotest-default-rtdb.firebaseio.com/.json";
+            const data = { turnedOn: value };
+
+            try {
+                const response = await fetch(url, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert(`turnedOn successfully updated to ${value}`);
+                } else {
+                    alert("Failed to update turnedOn: " + response.status);
+                }
+            } catch (error) {
+                console.error("Error updating turnedOn:", error);
+                alert("An error occurred: " + error.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Update turnedOn Value</h1>
+    <p>Click a button to update the <code>turnedOn</code> value in the Firebase Realtime Database.</p>
+    <button onclick="updateTurnedOn(true)">Set turnedOn to TRUE</button>
+    <button onclick="updateTurnedOn(false)">Set turnedOn to FALSE</button>
+</body>
+</html>
