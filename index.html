@@ -30,9 +30,20 @@
     </script>
 </head>
 <body>
-    <h1>Update turnedOn Value</h1>
-    <p>Click a button to update the <code>turnedOn</code> value in the Firebase Realtime Database.</p>
-    <button onclick="updateTurnedOn(true)">Set turnedOn to TRUE</button>
-    <button onclick="updateTurnedOn(false)">Set turnedOn to FALSE</button>
+    <h1>LED test with arduino and python</h1>
+    <p>Turn on and off the LED</p>
+    <button onclick="updateTurnedOn(true)">Turn on LED</button>
+    <button onclick="updateTurnedOn(false)">Turn off LED</button>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
 </body>
 </html>
